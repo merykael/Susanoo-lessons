@@ -36,5 +36,10 @@ public class Student extends AbstractModel {
 		this.father_name = father_name;
 		super.notifySubscribers();
 	}
+	
+	@Override
+	public String toString(){
+		return this.first_name + " " + this.second_name + " " + this.father_name;
+	}
 }
 
