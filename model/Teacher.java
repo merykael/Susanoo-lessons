@@ -1,9 +1,10 @@
 package model;
 
-public class Teacher {
+public class Teacher extends AbstractModel {
 	private String first_name, second_name, father_name;
 
 	public Teacher(String first_name, String second_name, String father_name) {
+		super();
 		this.first_name = first_name;
 		this.second_name = second_name;
 		this.father_name = father_name;
@@ -23,13 +24,16 @@ public class Teacher {
 	
 	public void setFirstName(String first_name) {
 		this.first_name = first_name;
+		super.notifySubscribers();
 	}
 	
 	public void setSecondName(String second_name) {
 		this.second_name = second_name;
+		super.notifySubscribers();
 	}
 	
 	public void setFatherName(String father_name) {
 		this.father_name = father_name;
+		super.notifySubscribers();
 	}
 }
