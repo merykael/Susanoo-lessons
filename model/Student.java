@@ -3,17 +3,21 @@ package model;
 public class Student extends AbstractModel {
 	private String first_name, second_name, father_name;
 
+	public Student(){
+		super();
+	}
+
 	public Student(String first_name, String second_name, String father_name) {
 		super();
 		this.first_name = first_name;
 		this.second_name = second_name;
-		this.second_name = father_name;
+		this.father_name = father_name;
 	}
 	
 	public String getFirstName() {
 		return first_name;
 	}
-	
+
 	public String getSecondName() {
 		return second_name;
 	}

@@ -1,5 +1,7 @@
 package data;
 
+import java.sql.SQLException;
+
 import model.AbstractModel;
 import model.ISubscriber;
 
@@ -14,10 +16,18 @@ public class Student implements ISubscriber {
 		this.model.addSubscriber(this);
 	}
 
+	public model.Student getModel(){
+		return model;
+	}
+	
 	@Override
 	public void updateModel(AbstractModel model) {
-		// TODO Auto-generated method stub
-		
+		try {
+			DataDispatcher.getInstance().updateStudent(id, (model.Student)model);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
